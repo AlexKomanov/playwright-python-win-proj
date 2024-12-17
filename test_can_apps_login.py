@@ -2,6 +2,7 @@ from playwright.sync_api import Page, expect
 from faker import Faker
 fake = Faker()
 
+
 def test_example(page: Page):
     page.goto('https://canvusapps.com/login')
     page.locator('#email').fill(fake.email())
