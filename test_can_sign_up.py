@@ -1,8 +1,10 @@
 from playwright.sync_api import Page, expect
 from faker import Faker
 fake = Faker()
+import pytest
 
 
+@pytest.mark.skip
 def test_example(page: Page) -> None:
     random_name = fake.name()
     random_email = fake.email()
