@@ -2,9 +2,11 @@ from playwright.sync_api import Page, expect
 from faker import Faker
 fake = Faker()
 
+
 def test_example(page: Page):
+    random_email = fake.email()
     page.goto('https://canvusapps.com/login')
-    page.locator('#email').fill(fake.email())
+    page.locator('#email').fill(random_email)
     page.locator('[name="password"]').fill(fake.password(length=8, digits=True))
     page.get_by_role('checkbox', name='Remember me').check()
     page.get_by_role('button', name='Login').click()
