@@ -27,7 +27,7 @@ jobs:
     - name: Playwright Install
       run: playwright install
     - name: Run Tests
-      run: pytest -v --screenshot=on
+      run: pytest -v --screenshot=on --browser=firefox
     - uses: actions/upload-artifact@v3
       if: always()
       with:
