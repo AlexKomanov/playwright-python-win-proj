@@ -28,7 +28,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Playwright Install
-      run: playwright install
+      run: sudo playwright install-deps
 
     - name: Run Tests with Allure
       run: pytest -v --screenshot=on --browser=firefox --alluredir=allure-results
