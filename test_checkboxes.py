@@ -1,7 +1,9 @@
-import re
+import allure
 from playwright.sync_api import Page, expect
 
 
+@allure.feature("QA Practice")
+@allure.story("Checkboxes")
 def test_checkboxes(page: Page) -> None:
     page.goto("https://www.qa-practice.com/elements/checkbox/mult_checkbox")
     page.get_by_label("One").check()

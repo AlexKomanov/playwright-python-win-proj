@@ -1,6 +1,9 @@
 from playwright.sync_api import Page, expect
+import allure
 
 
+@allure.feature("QA Practice")
+@allure.story("Multi Select")
 def test_multiple_selects(page: Page) -> None:
     page.goto("https://www.qa-practice.com/elements/select/mult_select")
     page.get_by_label("Choose the place you want to").select_option("4")
